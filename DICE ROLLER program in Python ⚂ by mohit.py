@@ -1,0 +1,53 @@
+import random
+print('Hey! welcome to dice rolller game.')
+
+
+#use this to print the structure print("\u25CF \u250C \u2500 \u2510 \u2514 \u2518")
+dices = {
+    1: ("┌─────────┐",
+        "│         │",
+        "│    ●    │",
+        "│         │",
+        "└─────────┘"),
+    2: ("┌─────────┐",
+        "│  ●      │",
+        "│         │",
+        "│      ●  │",
+        "└─────────┘"),
+    3: ("┌─────────┐",
+        "│  ●      │",
+        "│    ●    │",
+        "│      ●  │",
+        "└─────────┘"),
+    4: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│         │",
+        "│  ●   ●  │",
+        "└─────────┘"),
+    5: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│    ●    │",
+        "│  ●   ●  │",
+        "└─────────┘"),
+    6: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "└─────────┘")
+}
+
+dice = []
+total = 0
+num_of_dice = int(input("How many dice you wants to roll?: "))
+
+for die in range(num_of_dice):
+    dice.append(random.randint(1, 6))
+for line in range(5):
+    for die in dice:
+        print(dices.get(die)[line], end="")
+    print()
+
+for die in dice:
+    total += die
+print(f"total: {total}")
+#credit : Bro code
